@@ -97,6 +97,17 @@ img{ max-width:100%; height:auto; }
 .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in-view{ opacity:1; transform: translateY(0); }
 
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition: opacity .2s ease; z-index:80; }
+.modal.is-visible{ opacity:1; pointer-events:auto; }
+.modal-backdrop{ position:absolute; inset:0; background:rgba(15,23,42,0.55); backdrop-filter: blur(6px); }
+.modal-dialog{ position:relative; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px 32px; box-shadow:var(--shadow); max-width:520px; width:calc(100% - 32px); z-index:1; }
+.modal-body{ display:flex; flex-direction:column; gap:16px; }
+.modal-body h3{ margin:0; font-size:22px; }
+.modal-body p{ margin:0; color:var(--muted); line-height:1.6; }
+.modal-close{ position:absolute; top:12px; right:12px; background:transparent; border:none; color:var(--muted); font-size:24px; cursor:pointer; }
+.modal-close:hover{ color:var(--fg); }
+.is-hidden{ display:none !important; }
+
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns:1fr; }
   .two-col{ grid-template-columns:1fr; }
