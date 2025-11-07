@@ -47,7 +47,6 @@
   if(yearSpan) yearSpan.textContent = String(new Date().getFullYear())
 
   // Project modal
-  const projectButtons = Array.from(document.querySelectorAll('.btn-project'))
   const modal = document.getElementById('projectModal')
   const modalTitle = document.getElementById('modalTitle')
   const modalDescription = document.getElementById('modalDescription')
@@ -87,11 +86,18 @@
     }
   }
 
+  const projectAliases = {
+    'painel-monitoramento': 'analise-vendas',
+    'landing-page': 'calculadora',
+    'api-autenticacao': 'bot-redes-sociais'
+  }
+
   let lastFocusedElement = null
 
   function openModal(projectId){
     if(!modal || !modalTitle || !modalDescription || !modalGithub) return
-    const info = projectsInfo[projectId]
+    const resolvedId = projectsInfo[projectId] ? projectId : projectAliases[projectId]
+    const info = resolvedId ? projectsInfo[resolvedId] : undefined
     if(!info) return
 
     modalTitle.textContent = info.title
@@ -119,11 +125,12 @@
     }
   }
 
-  projectButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      lastFocusedElement = button
-      openModal(button.getAttribute('data-project'))
-    })
+  document.addEventListener('click', event => {
+    const button = event.target.closest('.btn-project')
+    if(!button) return
+    event.preventDefault()
+    lastFocusedElement = button
+    openModal(button.getAttribute('data-project'))
   })
 
   modalCloseElements.forEach(element => {
