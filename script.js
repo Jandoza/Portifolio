@@ -55,19 +55,19 @@
   const modalCloseElements = Array.from(document.querySelectorAll('[data-modal-close]'))
 
   const projectsInfo = {
-    'painel-monitoramento': {
-      title: 'Painel de Monitoramento',
-      description: 'Dashboard web com indicadores em tempo real, construção de endpoints REST e geração de relatórios para apoiar decisões de negócio.',
+    'analise-vendas': {
+      title: 'Análise de Vendas',
+      description: 'Script em Python que simula dados, calcula indicadores e gera gráficos comparativos para análise rápida de desempenho.',
       github: 'https://github.com/Jandoza/Analise-vendas.git'
     },
-    'landing-page': {
-      title: 'Landing Page Interativa',
-      description: 'Landing page responsiva focada em conversão, com animações suaves, componentes reutilizáveis e otimização de performance.',
+    'calculadora': {
+      title: 'Calculadora Científica',
+      description: 'Calculadora web com suporte a operações científicas, combinações de teclas, histórico e validação de entrada.',
       github: 'https://github.com/Jandoza/Calculadora-.git'
     },
-    'api-autenticacao': {
-      title: 'API de Autenticação',
-      description: 'API Node.js estruturada com Express, fluxo de autenticação via JWT, refresh tokens e camadas para boas práticas de segurança.',
+    'bot-redes-sociais': {
+      title: 'Bot Redes Sociais',
+      description: 'Automação em Python que agenda publicações, registra interações e organiza tudo em SQLite para acompanhamento posterior.',
       github: 'https://github.com/Jandoza/Bot-Redes-Sociais.git'
     },
     'gerenciador-tarefas': {
